@@ -1,4 +1,5 @@
 require 'spec_helper'
+require 'pry'
 
 describe "Pets Controller" do
   describe "new action" do
@@ -36,6 +37,7 @@ describe "Pets Controller" do
       choose(@owner1.id)
       click_button "Create Pet"
       @pet = Pet.last
+      # binding.pry
       expect(@pet.name).to eq("Michael")
       expect(@pet.owner.name).to eq("Cricky")
     end
